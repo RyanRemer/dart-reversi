@@ -27,8 +27,6 @@ class StateUtils {
         actions.add(new Action(4, 4));
       }
     } else {
-      // print("State:");
-      // print(state);
       for (int row = 0; row < State.boardSize; row++) {
         for (int col = 0; col < State.boardSize; col++) {
           if (state.board[row][col] == Color.Empty &&
@@ -39,8 +37,6 @@ class StateUtils {
       }
     }
     
-    // print("Valid Actions:");
-    // print(actions);
     return actions;
   }
 

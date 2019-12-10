@@ -4,12 +4,13 @@ import 'ai/reversi_ai.dart';
 import 'ai/state_heuristic/corner_heuristic.dart';
 import 'ai/state_heuristic/moves_heuristic.dart';
 import 'ai/state_heuristic/pieces_heuristic.dart';
+import 'ai/state_heuristic/random_heuristic.dart';
 import 'ai/state_heuristic/weighted_heuristic.dart';
 import 'network/reversi_client.dart';
 
 void main(List<String> args) {
   if (args.length < 3) {
-    print("Commage Usage: command host playerColor(1|2) aiType");
+    print("Commage Usage: command host playerColor(1|2) aiType(random, alphabeta depth)");
     return;
   }
 
@@ -25,11 +26,12 @@ void main(List<String> args) {
     ai = AlphaBetaAi(
       depth: depth,
       heuristic: WeightedHeuristic(
-        weights: [10, 1, 0.1],
+        weights: [10, 1, 0.25, 1],
         heuristics: [
           CornerHeuristic(),
           MovesHeuristic(),
-          PiecesHeuristic()
+          PiecesHeuristic(),
+          RandomHeuristic(),
         ],
       ),
     );

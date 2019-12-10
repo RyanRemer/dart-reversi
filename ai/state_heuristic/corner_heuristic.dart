@@ -18,7 +18,15 @@ class CornerHeuristic extends Heuristic {
       }
     }
 
-    return score;
+    if (score > 3.0){
+      return 3.0;
+    }
+    else if (score < -3.0){
+      return -3.0;
+    }
+    else {
+      return score;
+    }
   }
 
   @override
