@@ -6,7 +6,7 @@ Three different AIs for Reversi (Othello)
  * human - shows the board for player input
  
   There is an .exe file in lib/local.exe for you to play with
-  to play against a difficult ai type `./local.exe --ai=alphabeta
+  to play against a difficult ai type `./local.exe --ai=alphabeta`
 
   If you want to create your own AI in dart click the link below
   
